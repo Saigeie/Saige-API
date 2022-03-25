@@ -31,14 +31,14 @@ export function GetEndPoints(file: APIRouteType, res: Response) {
       jsonEndPoints.push(
         `GET /api/${file.parentRoute ? `${file.parentRoute}/` : ""}${
           file.name
-        }${parms.join("")}${apiKeySymbol}apikey=<key>`
+        }${parms.join("")}${apiKeySymbol}apikey=key`
       );
     }
     if (file.type === "image") {
       imageEndPoints.push(
         `GET /api/${file.parentRoute ? `${file.parentRoute}/` : ""}${
           file.name
-        }${parms.join("")}${apiKeySymbol}apikey=<key>`
+        }${parms.join("")}${apiKeySymbol}apikey=key`
       );
     }
     return { json: jsonEndPoints, image: imageEndPoints };
